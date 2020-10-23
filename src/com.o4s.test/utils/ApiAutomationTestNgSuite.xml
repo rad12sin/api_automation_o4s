@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Api Automation" parallel="tests" thread-count="1">
+	<!-- suite name="API Automation" parallel="tests" -->
+
+   <listeners>
+        <listener class-name="listener.CustomReport"/>
+    </listeners>
+
+	<test name="Login Post Api"
+		allow-return-values="true">
+		<classes>
+			<class
+				name="apiTest.LoginApiTest" />
+		</classes>
+	</test>
+
+</suite>

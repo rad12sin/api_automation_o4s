@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api_automation_o4s" target="1.5" />
+      <module name="api_automation_o4s" target="6" />
     </bytecodeTargetLevel>
   </component>
 </project>

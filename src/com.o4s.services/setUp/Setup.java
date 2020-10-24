@@ -65,9 +65,7 @@ public class Setup {
         return response;
     }
     public Response postApi(String url, String bodyRequest, String token) {
-        response = RestAssured.given().header("Api-Secret-Key","ycq55IbIjkLb").header("Api-Token","c84d563b77441d784dce71323f69eb42")
-                .header("Content-Type","application/json").body(bodyRequest).header("Authorization","bearer "+token)
-                .when().log().all().post(url).then().extract().response();
+        response = RestAssured.given().header("Content-Type","application/json").body(bodyRequest).auth().oauth2(token).when().log().all().post(url).then().extract().response();
         return response;
     }
 

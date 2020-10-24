@@ -1,6 +1,7 @@
 package apiTest;
 
 import api.AddHeroForFightPostApi;
+import api.DeleteFightDeleteApi;
 import com.google.gson.JsonObject;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -9,13 +10,14 @@ import org.testng.annotations.Test;
 
 public class AddHeroForFightPostApiTest {
     private AddHeroForFightPostApi addHeroForFightPostApi=new AddHeroForFightPostApi();
+    private DeleteFightDeleteApi deleteFightDeleteApi=new DeleteFightDeleteApi();
     private Response response;
     private JsonObject json;
     @BeforeClass
     private void getAuthToken() throws InterruptedException {
         //Read json file and store the json element in json variable
         json = utils.ReadJsonFile.getApiJson(System.getProperty("user.dir")+"\\src\\com.o4s.test\\testData\\addHeroForFightPostApi.json");
-        //Add reset the fight api here
+        deleteFightDeleteApi.deleteFightDeleteApi();
     }
     @Test
     private void setAddHeroForFightPostApiTest1(){

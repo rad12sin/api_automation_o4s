@@ -52,16 +52,9 @@ public class Setup {
 
         return response;
     }
-    public Response postApi(String url, String requestBody, String contentType, String header, String token) {
+    public Response deleteApi(String url, String token) {
         // TODO: Remove the url argument and use RestAssured.baseURI
-        response= given().contentType(contentType).
-                body(requestBody).header("Authorization","bearer "+token)
-                .header("Authorization",header).
-                        when().
-                        log().all().
-                        post(url).
-                        then().
-                        extract().response();
+        response= given().header("Content-Type","application/json").auth().oauth2(token).when().log().all().delete(url).then().extract().response();
         return response;
     }
     public Response postApi(String url, String bodyRequest, String token) {

@@ -34,5 +34,12 @@
 					name="apiTest.DeleteFightDeleteApiTest" />
 		</classes>
 	</test>
+	<test name="Fight between Heros"
+		  allow-return-values="true">
+		<classes>
+			<class
+					name="apiTest.HerosFightPostApiTest" />
+		</classes>
+	</test>
 
 </suite>

@@ -8,4 +8,5 @@ public class ApiUrlConstants {
     public static String heroDetails="/heroes/";
     public static String addHeroForFight="/fight/addHero";
     public static String deleteFight="/fight";
+    public static String HerosFight="/fight";
 }

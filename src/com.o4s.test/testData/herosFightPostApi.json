@@ -1,0 +1,28 @@
+{
+  "test_cases": [
+    {
+       "statusCode": "400",
+      "errorCode": "1004",
+      "error": "You can not start a fight with less than 2 heroes"
+    },
+    {
+      "heroId" : "THR",
+      "statusCode": "400",
+      "errorCode": "1004",
+      "error": "You can not start a fight with less than 2 heroes"
+    },
+    {
+      "heroId1" : "THR",
+      "heroId2" : "HLK",
+      "statusCode": "200",
+      "message": "Heroes fought hard! The winner is Thor!"
+    },
+    {
+      "heroId1" : "THR",
+      "heroId2" : "HLK",
+      "heroId3" : "IRM",
+      "statusCode": "200",
+      "message": "Heroes fought hard! The winner is Iron Man!"
+    }
+  ]
+}

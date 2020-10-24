@@ -9,24 +9,20 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import java.time.LocalDate;
 import java.util.Properties;
-
+import java.time.LocalDate;
 
 class SendFileEmail
 {
     public static void main(String[] args)
     {
         // email ID of Recipient.
-        String recipient = "tech-team@wakefit.co";
+        String recipient = "radhakrishna059@gmail.com";
         //String[] recipient = new String[2];
 
-        // add email addresses
-        //recipient[0] = "radhakrishna059@gmail.com";
-        //recipient[1] = "radha.singh@wakefit.co";
 
         // email ID of Sender.
-        String sender = "radha.singh@wakefit.co";
+        String sender = "radhakrishna.iet@gmail.com";
 
         // using host as localhost
         String host = "gmail-smtp-in.l.google.com";

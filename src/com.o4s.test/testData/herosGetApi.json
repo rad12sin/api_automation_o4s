@@ -1,0 +1,39 @@
+{
+  "test_cases": [
+    {
+      "id": "THR",
+      "name": "Thor",
+      "powerlevel": 9
+    },
+    {
+      "id": "HLK",
+      "name": "Hulk",
+      "powerlevel": 5
+    },
+    {
+      "id": "CAM",
+      "name": "Captain America",
+      "powerlevel": 8
+    },
+    {
+      "id": "IRM",
+      "name": "Iron Man",
+      "powerlevel": 7
+    },
+    {
+      "id": "BLW",
+      "name": "Black Widow",
+      "powerlevel": 6
+    },
+    {
+      "id": "DRS",
+      "name": "Doctor Strange",
+      "powerlevel": 4
+    },
+    {
+      "id": "VSN",
+      "name": "Vision",
+      "powerlevel": 3
+    }
+  ]
+}

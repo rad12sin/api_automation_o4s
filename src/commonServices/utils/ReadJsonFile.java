@@ -59,7 +59,8 @@ public class ReadJsonFile {
         return jsonObject;
     }
     public static void main(String args[]){
-        JsonObject json=getApiJson(System.getProperty("user.dir")+"\\com.wakefit.commonServices\\resources\\TestApi.json");
+        JsonObject json=getApiJson(System.getProperty("user.dir")+"/src/commonServices/resources/TestApi1.json");
+        System.out.println("JsonPath="+json.toString());
         String fName=json.get("phoneNumbers").getAsJsonArray().get(0).getAsJsonObject().get("number").toString();
         System.out.println(fName);
     }

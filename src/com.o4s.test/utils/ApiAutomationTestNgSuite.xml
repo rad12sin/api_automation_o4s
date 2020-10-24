@@ -6,11 +6,11 @@
         <listener class-name="listener.CustomReport"/>
     </listeners>
 
-	<test name="Login Post Api"
+	<test name="Heros Get Api"
 		allow-return-values="true">
 		<classes>
 			<class
-				name="apiTest.LoginApiTest" />
+				name="apiTest.HerosGetApiTest" />
 		</classes>
 	</test>
 

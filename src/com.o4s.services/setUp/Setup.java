@@ -23,9 +23,8 @@ public class Setup {
         response = given().when().log().all().get(url).then().extract().response();
         return response;
     }
-    public Response getApi(String url, String bodyRequest) {
-        response = RestAssured.given().header("Api-Secret-Key","ycq55IbIjkLb").header("Api-Token","c84d563b77441d784dce71323f69eb42")
-                .header("Content-Type","application/json").body(bodyRequest).when().log().all().post(url).then().extract().response();
+    public Response getApi(String url, String token) {
+        response = RestAssured.given().header("Content-Type","application/json").auth().oauth2(token).when().log().all().get(url).then().extract().response();
         return response;
     }
     public Response getApi(String url, String queryParam, String token) {

@@ -88,4 +88,16 @@ public class GetHeroDetailsGetApiTest {
         Assert.assertEquals(powerLevel,response.jsonPath().get("powerlevel").toString());
         System.out.println(response.asString());
     }
+    private void GetHerosDetailsGetApiTest7(){
+        System.out.println("Test case 7: Verify the response if we are passing null value Hero");
+        String pathParam=json.get("test_cases").getAsJsonArray().get(6).getAsJsonObject().get("id").getAsString();
+        response=getHeroDetailsGetApi.herosGetApi(pathParam);
+        Assert.assertEquals(response.getStatusCode(),200);
+    }
+    private void GetHerosDetailsGetApiTest8(){
+        System.out.println("Test case 8: Verify the response if we pass incorrect id of Hero");
+        String pathParam=json.get("test_cases").getAsJsonArray().get(7).getAsJsonObject().get("id").getAsString();
+        response=getHeroDetailsGetApi.herosGetApi(pathParam);
+        Assert.assertEquals(response.getStatusCode(),200);
+    }
 }

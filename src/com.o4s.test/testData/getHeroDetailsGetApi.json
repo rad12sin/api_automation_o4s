@@ -34,6 +34,14 @@
       "id": "VSN",
       "name": "Vision",
       "powerlevel": 3
+    },
+    {
+      "id": "null",
+      "name": ""
+    },
+    {
+      "id": "abc",
+      "name": ""
     }
   ]
 }

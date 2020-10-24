@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CustomReport implements IReporter {
   private static final SimpleDateFormat dateFormatter = new SimpleDateFormat(
-      " MMM d 'at' hh:mm a");
+          " MMM d 'at' hh:mm a");
   private PrintWriter m_out;
   private int m_row;
   private Integer m_testIndex;
@@ -37,11 +37,11 @@ public class CustomReport implements IReporter {
     Reporter.log("-------------------------------------", true);
     // Iterating over each suite included in the tests
     int failedTests = 0; // Record only the ones failed in Prod Monitoring
-                         // suite.
+    // suite.
     int pass = 0;
     int skip = 0;
     int total = 0;
-    
+
     for (ISuite suite : suites) {
       // Following code gets the suite name
       suiteName = suite.getName();
@@ -55,11 +55,11 @@ public class CustomReport implements IReporter {
         skip = tc.getSkippedTests().getAllResults().size();
         failedTests = total - pass - skip;
         System.out.println("Passed tests for suite '" + suiteName + "' is:"
-            + pass);
+                + pass);
         System.out.println("Failed tests for suite '" + suiteName + "' is:"
-            + failedTests);
+                + failedTests);
         System.out.println("Skipped tests for suite '" + suiteName + "' is:"
-            + skip);
+                + skip);
       }
 
     }
@@ -82,7 +82,7 @@ public class CustomReport implements IReporter {
   protected PrintWriter createWriter(String OUT_FOLDER) throws IOException {
     new File(OUT_FOLDER).mkdirs();
     return new PrintWriter(new BufferedWriter(new FileWriter(new File(
-        OUT_FOLDER, "CustomReport.html"))));
+            OUT_FOLDER, "CustomReport.html"))));
   }
 
   /**
@@ -103,7 +103,7 @@ public class CustomReport implements IReporter {
         String testName = testContext.getName();
         m_testIndex = testIndex;
         resultSummary(suite, testContext.getFailedTests(), testName, "failed",
-            "");
+                "");
         testIndex++;
       }
     }
@@ -127,12 +127,12 @@ public class CustomReport implements IReporter {
           m_out.println("<h3>" + testContext.getName() + "</h3>");
         }
         Reporter.log("Generating method detail for failed configurations...",
-            true);
+                true);
         resultDetail(testContext.getFailedConfigurations());
         Reporter.log("Generating method detail for failed tests...", true);
         resultDetail(testContext.getFailedTests());
         Reporter.log("Generating method detail for skipped configurations...",
-            true);
+                true);
         resultDetail(testContext.getSkippedConfigurations());
         Reporter.log("Generating method detail for skipped tests...", true);
         resultDetail(testContext.getSkippedTests());
@@ -165,7 +165,7 @@ public class CustomReport implements IReporter {
   }
 
   /**
-   * 
+   *
    * @param tests
    */
   private void resultSummary(ISuite suite, IResultMap tests, String testname,
@@ -183,7 +183,7 @@ public class CustomReport implements IReporter {
         String className = testClass.getName();
         if (mq == 0) {
           String id = (m_testIndex == null ? null : "t"
-              + Integer.toString(m_testIndex));
+                  + Integer.toString(m_testIndex));
           // titleRow(testname + "-" + style + details, 6, id ); // sets width
           // of 'Tests -- Passed'
           // row
@@ -193,7 +193,7 @@ public class CustomReport implements IReporter {
           if (mq > 0) {
             cq += 1;
             m_out.print("<tr class=\"" + style + (cq % 2 == 0 ? "even" : "odd")
-                + "\">" + "<td");
+                    + "\">" + "<td");
             if (mq > 1) {
               m_out.print(" rowspan=\"" + mq + "\"");
             }
@@ -223,7 +223,7 @@ public class CustomReport implements IReporter {
         String description = method.getDescription();
         String t1 = qualifiedName(method);
 
-        
+
 
         if (!(t2.equals(t1)) && resultSet.size() == ( 1))
 
@@ -233,30 +233,30 @@ public class CustomReport implements IReporter {
           mq += 1;
           if (mq > 1) {
             buff.append("<tr class=\"" + style + (cq % 2 == 0 ? "odd" : "even")
-                + "\">");
+                    + "\">");
           }
           String testInstanceName = resultSet.toArray(new ITestResult[] {})[0]
-              .getTestName();
+                  .getTestName();
           buff.append("<td><a href=\"#m"
-              + m_methodIndex
-              + "\">"
-              + qualifiedName(method)
-              + " "
-              + (description != null && description.length() > 0 ? "(\""
+                  + m_methodIndex
+                  + "\">"
+                  + qualifiedName(method)
+                  + " "
+                  + (description != null && description.length() > 0 ? "(\""
                   + description + "\")" : "")
-              + "</a>"
-              + (null == testInstanceName ? "" : "<br>(" + testInstanceName
+                  + "</a>"
+                  + (null == testInstanceName ? "" : "<br>(" + testInstanceName
                   + ")") + "</td>" + "<td class=\"numi\">" + resultSet.size()
-              + "</td>" + "<td>" + formattedDate + "</td>"
-              + "<td class=\"numi\">"
-              + convertLongToCanonicalLengthOfTime(end - start) + "</td>"
-              + "</tr>");
+                  + "</td>" + "<td>" + formattedDate + "</td>"
+                  + "<td class=\"numi\">"
+                  + convertLongToCanonicalLengthOfTime(end - start) + "</td>"
+                  + "</tr>");
         }
       }
       if (mq > 0) {
         cq += 1;
         m_out.print("<tr class=\"" + style + (cq % 2 == 0 ? "even" : "odd")
-            + "\">" + "<td");
+                + "\">" + "<td");
         if (mq > 1) {
           m_out.print(" rowspan=\"" + mq + "\"");
         }
@@ -269,10 +269,10 @@ public class CustomReport implements IReporter {
   private void startResultSummaryTable(String style) {
     tableStart(style, "summary");
     m_out
-        .println("<b align=\"center\"><font color='red'>Failed Test Summary Table</font></b>");
+            .println("<b align=\"center\"><font color='red'>Failed Test Summary Table</font></b>");
     m_out
-        .println("<tr><th>Class</th>"
-            + "<th>Method</th><th># of<br>Failed</th><th>Start</th><th>Time<br>elapsed</th></tr>");
+            .println("<tr><th>Class</th>"
+                    + "<th>Method</th><th># of<br>Failed</th><th>Start</th><th>Time<br>elapsed</th></tr>");
     m_row = 0;
   }
 
@@ -295,7 +295,7 @@ public class CustomReport implements IReporter {
 
   /**
    * Called by method generateMethodDetailReport
-   * 
+   *
    * @param tests
    */
   private void resultDetail(IResultMap tests) {
@@ -305,11 +305,11 @@ public class CustomReport implements IReporter {
         m_methodIndex++;
         String cname = method.getTestClass().getName();
         m_out.println("<h2 id=\"m" + m_methodIndex + "\">" + cname + " : "
-            + method.getMethodName() + "</h2>");
+                + method.getMethodName() + "</h2>");
         Set<ITestResult> resultSet = tests.getResults(method);
         generateForResult(result, method, resultSet.size());
         m_out
-            .println("<p class=\"totop\"><a href=\"#summary\">back to summary</a></p>");
+                .println("<p class=\"totop\"><a href=\"#summary\">back to summary</a></p>");
       }
     } else {
       Reporter.log("Result map was empty.", true);
@@ -318,7 +318,7 @@ public class CustomReport implements IReporter {
 
   /**
    * Write the first line of the stack trace
-   * 
+   *
    * @param tests
    */
   @SuppressWarnings("unused")
@@ -333,8 +333,8 @@ public class CustomReport implements IReporter {
         boolean wantsMinimalOutput = result.getStatus() == ITestResult.SUCCESS;
         if (hasReporterOutput) {
           m_out.print("<h3>"
-              + (wantsMinimalOutput ? "Expected Exception" : "Failure")
-              + "</h3>");
+                  + (wantsMinimalOutput ? "Expected Exception" : "Failure")
+                  + "</h3>");
         }
         // Getting first line of the stack trace
         //String str = Utils.stackTrace(exception, true)[0];
@@ -348,7 +348,7 @@ public class CustomReport implements IReporter {
 
   /**
    * Write all parameters
-   * 
+   *
    * @param tests
    */
   @SuppressWarnings("unused")
@@ -360,7 +360,7 @@ public class CustomReport implements IReporter {
       if (hasParameters) {
         for (Object p : parameters) {
           m_out.println(Utils.escapeHtml(Utils.toString(p,
-              String.class)) + " | ");
+                  String.class)) + " | ");
         }
       }
     }
@@ -369,13 +369,13 @@ public class CustomReport implements IReporter {
   /**
    * Called by resultDetail method to show detailed information about each tests
    * including the console log.
-   * 
+   *
    * @param ans
    * @param method
    * @param resultSetSize
    */
   private void generateForResult(ITestResult ans, ITestNGMethod method,
-      int resultSetSize) {
+                                 int resultSetSize) {
     Object[] parameters = ans.getParameters();
     boolean hasParameters = parameters != null && parameters.length > 0;
     tableStart("result", null);
@@ -389,7 +389,7 @@ public class CustomReport implements IReporter {
       m_out.print("<tr class=\"param stripe\">");
       for (Object p : parameters) {
         m_out.println("<td>"
-            + Utils.escapeHtml(Utils.toString(p, String.class)) + "</td>");
+                + Utils.escapeHtml(Utils.toString(p, String.class)) + "</td>");
       }
       m_out.println("</tr>");
     } else {
@@ -421,8 +421,8 @@ public class CustomReport implements IReporter {
         boolean wantsMinimalOutput = ans.getStatus() == ITestResult.SUCCESS;
         if (hasReporterOutput) {
           m_out.println("<h3>"
-              + (wantsMinimalOutput ? "Expected Exception" : "Failure")
-              + "</h3>");
+                  + (wantsMinimalOutput ? "Expected Exception" : "Failure")
+                  + "</h3>");
         }
         generateExceptionReport(exception, method);
       }
@@ -433,7 +433,7 @@ public class CustomReport implements IReporter {
       }
     } else {
       m_out
-          .println("<tr><td><i>Test did not have report output.</i></td></tr>");
+              .println("<tr><td><i>Test did not have report output.</i></td></tr>");
     }
     m_out.println("</table>");
   }
@@ -482,24 +482,24 @@ public class CustomReport implements IReporter {
     tableColumnStart("Total Passed");
     tableColumnStart("Total Failed");
     tableColumnStart("Total skipped");
-    
+
     m_out.println("</tr>");
 
     int qty_tests = 0;
     int qty_pass_s = 0;
     int qty_skip = 0;
     int qty_fail = 0;
-    
+
     m_testIndex = 1;
     int failedTests = 0;
     int totalTest=0;
-    
+
     if (suites.size() == 0)
       throw new TestNGException(
-          "You need to have at lease one suite to generate a report.");
+              "You need to have at lease one suite to generate a report.");
     for (ISuite suite : suites) {
       // titleRow( suite.getName(), 8 );
-       totalTest = suite.getAllMethods().size();
+      totalTest = suite.getAllMethods().size();
       Map<String, ISuiteResult> tests = suite.getResults();
       for (ISuiteResult r : tests.values()) {
         qty_tests += 1;
@@ -524,8 +524,8 @@ public class CustomReport implements IReporter {
           failedTests = 0;
 
         int totalExecuted = qty_pass_s + qty_skip + qty_fail;
-        	totalTest=totalExecuted;
-       
+        totalTest=totalExecuted;
+
         // summaryCell(q, 0);
 
         // summaryCell( overview.getIncludedGroups() );
@@ -535,25 +535,25 @@ public class CustomReport implements IReporter {
       }
       // m_out.println("<tr class=\"total\"><td>Total</td>");
       // summaryCell( qty_pass_m, Integer.MAX_VALUE );
-    
-    }
-       summaryCell(totalTest, 0);
-      summaryCell(qty_pass_s, Integer.MAX_VALUE);
-      summaryCell(failedTests, 0);
-      summaryCell(qty_skip, 0);
-    
 
-      // String passedTime = convertLongToCanonicalLengthOfTime( testEnd -
-      // testStart );
-      // summaryCell( "9999", true); //TODO fix this
-      // m_out.println("<td colspan=\"2\">&nbsp;</td></tr>");
-      m_out.println("</table>");
-      m_out.println("<p></p>");
-      m_out.println("<!--FAILED_TESTS:" + failedTests + ":-->");
-      int failedAndSkippedTests = failedTests + qty_skip;
-      m_out.println("<!--FAILED_AND_SKIPPED_TESTS:" + failedAndSkippedTests
-          + ":-->");
-    
+    }
+    summaryCell(totalTest, 0);
+    summaryCell(qty_pass_s, Integer.MAX_VALUE);
+    summaryCell(failedTests, 0);
+    summaryCell(qty_skip, 0);
+
+
+    // String passedTime = convertLongToCanonicalLengthOfTime( testEnd -
+    // testStart );
+    // summaryCell( "9999", true); //TODO fix this
+    // m_out.println("<td colspan=\"2\">&nbsp;</td></tr>");
+    m_out.println("</table>");
+    m_out.println("<p></p>");
+    m_out.println("<!--FAILED_TESTS:" + failedTests + ":-->");
+    int failedAndSkippedTests = failedTests + qty_skip;
+    m_out.println("<!--FAILED_AND_SKIPPED_TESTS:" + failedAndSkippedTests
+            + ":-->");
+
   }
 
   public void generateSuiteSummaryReport(List<ISuite> suites) {
@@ -577,14 +577,14 @@ public class CustomReport implements IReporter {
     int qty_skip = 0;
     int qty_fail = 0;
     int failedTests = 0;
-   
+
 
     long testStart;
     long testEnd;
     m_testIndex = 1;
     if (suites.size() == 0)
       throw new TestNGException(
-          "You need to have at lease one suite to generate a report.");
+              "You need to have at lease one suite to generate a report.");
     for (ISuite suite : suites) {
       // titleRow( suite.getName(), 8 );
       int TotalTests = suite.getAllMethods().size();
@@ -610,16 +610,16 @@ public class CustomReport implements IReporter {
         testStart = overview.getStartDate().getTime();
         testEnd = overview.getEndDate().getTime();
         String passedTime = convertLongToCanonicalLengthOfTime(testEnd
-            - testStart);
+                - testStart);
         summaryCell(passedTime, true);
         // summaryCell( overview.getIncludedGroups() );
         // summaryCell( overview.getExcludedGroups() );
         m_out.println("</tr>");
         m_testIndex++;
       }
-    
+
     }
-  
+
     m_out.println("<tr class=\"total\"/><td>Total</td>");
     // summaryCell( qty_pass_m, Integer.MAX_VALUE );
     if (qty_fail < 0)
@@ -668,14 +668,14 @@ public class CustomReport implements IReporter {
 
   private void summaryCell(String v, boolean isgood) {
     m_out.print("<td class=\"numi" + (isgood ? "" : "_attn") + "\">" + v
-        + "</td>");
+            + "</td>");
   }
 
   private void startSummaryRow(String label) {
     m_row += 1;
     m_out.print("<tr" + (m_row % 2 == 0 ? " class=\"stripe\"" : "")
-        + "><td style=\"text-align:left;padding-right:2em\"><a href=\"#t"
-        + m_testIndex + "\">" + label + "</a>" + "</td>");
+            + "><td style=\"text-align:left;padding-right:2em\"><a href=\"#t"
+            + m_testIndex + "\">" + label + "</a>" + "</td>");
   }
 
   private void summaryCell(int v, int maxexpected) {
@@ -684,9 +684,9 @@ public class CustomReport implements IReporter {
 
   private void tableStart(String cssclass, String id) {
     m_out.println("<table cellspacing=\"0\" cellpadding=\"0\""
-        + (cssclass != null ? " class=\"" + cssclass + "\""
+            + (cssclass != null ? " class=\"" + cssclass + "\""
             : " style=\"padding-bottom:2em\"")
-        + (id != null ? " id=\"" + id + "\"" : "") + ">");
+            + (id != null ? " id=\"" + id + "\"" : "") + ">");
     m_row = 0;
   }
 

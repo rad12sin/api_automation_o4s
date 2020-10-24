@@ -13,5 +13,19 @@
 				name="apiTest.HerosGetApiTest" />
 		</classes>
 	</test>
+	<test name="Get Hero details api"
+		  allow-return-values="true">
+		<classes>
+			<class
+					name="apiTest.GetHeroDetailsGetApiTest" />
+		</classes>
+	</test>
+	<test name="Add hero Post Api test"
+		  allow-return-values="true">
+		<classes>
+			<class
+					name="apiTest.AddHeroForFightPostApiTest" />
+		</classes>
+	</test>
 
 </suite>

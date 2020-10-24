@@ -6,5 +6,6 @@ public class ApiUrlConstants {
     public static String databaseUrl=System.getProperty("user.dir")+"\\com.o4s.commonServices\\resources\\Database.property";
     public static String getHerosUrl="/heroes";
     public static String heroDetails="/heroes/";
+    public static String addHeroForFight="/fight/addHero";
 
 }

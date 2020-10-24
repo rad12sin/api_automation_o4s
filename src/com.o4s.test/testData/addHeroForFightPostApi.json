@@ -1,0 +1,44 @@
+{
+  "test_cases": [
+    {
+      "heroId" : "IRM",
+      "statusCode" : "200",
+      "message": "Yippie! Iron Man added. At the moment 1 hero waiting to fight."
+    },
+    {
+      "heroId" : "THR",
+      "statusCode" : "200",
+      "message": "Yippie! Thor added. At the moment 2 heroes waiting to fight."
+    },
+    {
+      "heroId" : "HLK",
+      "statusCode" : "200",
+      "message": "Yippie! Hulk added. At the moment 3 heroes waiting to fight."
+    },
+    {
+      "heroId" : "IRM",
+      "errorCode": "1001",
+      "error": "Iron Man could not be added because is already in the fight."
+    },
+    {
+      "heroId" : "",
+      "errorCode": "1002",
+      "error": "Hero ID must be passed on the POST request"
+    },
+    {
+      "heroId" : "xyz",
+      "errorCode": "1000",
+      "error": "There is no hero with the id [xyz]"
+    },
+    {
+      "heroId" : "null",
+      "errorCode": "1000",
+      "error": "There is no hero with the id [null]"
+    },
+    {
+      "heroId" : "CAM",
+      "errorCode": "1003",
+      "error": "A maximum of 3 heroes are allowed per fight."
+    }
+  ]
+}

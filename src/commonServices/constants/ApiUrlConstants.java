@@ -5,5 +5,6 @@ public class ApiUrlConstants {
     public static String bearerToken="pag4nt1stoken";
     public static String databaseUrl=System.getProperty("user.dir")+"\\com.o4s.commonServices\\resources\\Database.property";
     public static String getHerosUrl="/heroes";
+    public static String heroDetails="/heroes/";
 
 }

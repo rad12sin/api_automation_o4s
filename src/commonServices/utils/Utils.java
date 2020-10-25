@@ -4,7 +4,6 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;

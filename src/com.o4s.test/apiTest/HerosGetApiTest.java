@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class HerosGetApiTest {

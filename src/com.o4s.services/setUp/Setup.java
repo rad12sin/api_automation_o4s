@@ -3,14 +3,11 @@ package setUp;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import constants.ApiUrlConstants;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import utils.ReadPropertyFile;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 import static io.restassured.RestAssured.given;
 
